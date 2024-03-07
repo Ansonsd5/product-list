@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const ProductDetail = ({ product }) => {
   const [isLiked, setIsLiked] = useState(false);
@@ -27,7 +28,7 @@ const ProductDetail = ({ product }) => {
       </motion.div>
       <h2 className="text-3xl font-semibold text-gray-900 mb-4">{product.title}</h2>
       <div className="flex justify-center mb-4">
-        <img className="h-64 w-auto object-contain" src={product.image} alt={product.title} />
+        <Image className="h-64 w-auto object-contain" width={50} height={50} src={product.image} alt={product.title} />
       </div>
       <p className="text-xl font-semibold text-gray-900 mb-2">${product.price}</p>
       <p className="text-gray-700 mb-4">{product.description}</p>
